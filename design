@@ -1,0 +1,42 @@
+import streamlit as st
+
+# Page configuration
+st.set_page_config(page_title="Disease Predictor", layout="wide")
+
+# Main Heading
+st.title("🧠 Disease Prediction System")
+
+# Sidebar for disease selection
+st.sidebar.header("Select Disease")
+disease = st.sidebar.radio(
+    "Choose the disease to predict:",
+    options=["Heart Disease", "Diabetes", "Parkinson's"],
+)
+
+# Container for form
+st.subheader(f"Enter patient details for {disease} prediction:")
+
+# Layout: Two columns form
+col1, col2 = st.columns(2)
+
+with col1:
+    age = st.number_input("Age", min_value=1, max_value=120, value=30)
+    gender = st.selectbox("Gender", ["Male", "Female"])
+    bp = st.number_input("Blood Pressure", value=120)
+    cholesterol = st.number_input("Cholesterol", value=200)
+
+with col2:
+    glucose = st.number_input("Glucose Level", value=90)
+    bmi = st.number_input("BMI", value=22.0)
+    heart_rate = st.number_input("Heart Rate", value=75)
+    smoker = st.selectbox("Smoker", ["No", "Yes"])
+
+# Predict button
+if st.button("🔍 Predict"):
+    # Dummy prediction for now
+    st.success(f"✅ Prediction for {disease}: No signs of disease detected.")
+
+# Footer note
+st.markdown("---")
+st.markdown("© 2025 Health Predictor | Built with Streamlit")
+
