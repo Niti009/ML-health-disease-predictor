@@ -1,0 +1,6 @@
+Flask
+scikit-learn
+Pickle
+ML
+Python
+Streamlit
